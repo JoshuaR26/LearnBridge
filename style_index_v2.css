@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Rajdhani&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    color: #000;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+h1{
+    font-family: 'Jost',sans-serif;
+    font-weight: 600;
+}
+.stuff{
+    background-image: radial-gradient(rgb(255, 200, 0),rgb(255, 170, 0)) ;
+}
+/* ! BACKGROUND */
+.banner{
+    overflow-x: hidden;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat ;
+    background-image: radial-gradient(rgba(255, 200, 0, 0.6),rgba(255, 136, 0, 0.7)),url('./Images/home_bg3.jpg');
+}
+
+/* ! NAVIGATION BAR */
+header{
+    position:sticky;
+    top:0px;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #293452;
+    box-shadow: 1px 1px 30px #00000062;
+}
+.logo img{
+    cursor:pointer;
+}
+.nav_links{
+    list-style: none;
+    display: inline-block;
+}
+.nav_links li{
+    display: inline-block;
+    padding: 0 60px;
+}
+.nav_links li a{
+    color: #fff;
+    text-decoration: none;
+}
+.nav_links button{
+    color: #1b1c17;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ffffff;
+    /* box-shadow: 1px 1px 15px #38393682; */
+    transition: 0.5s;
+}
+.nav_links button:hover{
+    background-color: #ffd025;
+}
+.nav_links button:active{
+    opacity:0.6;
+}
+
+/* ! TITLE CARD */
+.content{
+    margin-top: 250px;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+.content p{
+    letter-spacing: 3px;
+    text-align: center;
+    color: #000000;
+    font-weight: bolder;
+    font-size: 30px;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 5px #1b1c173d;
+    font-weight:bolder;
+    line-height: 25px;
+    background-color: transparent;
+}
+.content img{
+    height:"250px";
+    transition: 0.5s;
+}
+.content img:hover{
+    height: 260px;
+}
+/* ! CONTENT */
+.home_content{
+    width: 100%;
+    height: auto;
+    box-shadow: 1px 1px 50px rgba(0,0,0,.5);
+    text-shadow: 1px 1px 5px rgba(0,0,0,1);
+}
+.home_content h1{
+    width: 42%;
+
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-size: 5.5em;
+    letter-spacing: 5px;
+}
+.home_content p{
+    padding: 50px 30px;
+    width: 40%;
+    
+    font-size: 2em;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+.about{
+    
+    background-image: linear-gradient(to right,rgba(21, 40, 46,1),rgba(21, 40, 46,.8),rgba(0,0,0,.1)),url('./Images/index_img1.jpg');
+    background-position-x: right;
+    background-size: cover;
+    height: 80%;
+}
+.discord{
+    justify-content: space-between;
+    display: flex;
+    padding: 30px;
+}
+.dis_qr_code{
+    transition: .3s;
+}
+.dis_qr_code:hover{
+    height:305px
+}
+.contact{
+    margin-top: 300px;
+}
+
+/*! APPS */
+.apps{
+    /* margin: 0 auto; */
+    padding: 2em ;
+    /* overflow-x: hidden; */
+    font-size: 50px;
+
+    display:grid;
+    grid-template-columns: repeat(2em,3fr);
+    grid-column-gap: 1em;
+    
+    justify-items: center;
+    align-items: center;
+    
+    text-align: center;
+}
+.apps button{
+    background-color: transparent;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 1px 1px 20px #00000044;
+    padding: 2rem;
+    transition: 0.2s;
+    /* -webkit-backdrop-filter: blur(5px); */
+}
+.apps button:hover{
+    padding: 2.5rem;
+}
+.app1{
+    grid-area: 1/1/1/2;
+    background-image: radial-gradient(rgba(21, 40, 46, 0.5),rgba(21, 40, 46,.9)),url(./Images/resources_bg3.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+}
+.app2{
+    grid-area: 1/2/1/3;
+    background-image: radial-gradient(rgba(21, 40, 46, 0.5),rgba(21, 40, 46,.9)),url(./Images/todo_bg1.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+}
+.app3{
+    grid-area: 1/3/1/3;
+    background-image: radial-gradient(rgba(21, 40, 46, 0.5),rgba(21, 40, 46,.9)),url(./Images/article_bg2.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+}

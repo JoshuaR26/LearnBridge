@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>To Do</title>
+    <link rel="stylesheet" href="/Html Files/style_timetable.css">
+    <link rel="icon" href="/Images/logo/lb_icon.png">
+
+
+</head>
+<body>
+    <div class="banner">
+        <header>
+            <img class="logo" src="/Images/logo/Learn_Bridge3.png" alt="logo" height="100px">
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="index.html"><button>HOME</button></a></li>
+                    
+                    <li><a href="#"><button>CONTACT US</button></a></li>
+                </ul>
+            </nav>
+        </header>
+        <table class="content_table">
+            <thead>
+            <tr>
+                <th class="task">TASK</th>
+                <th>DUE DATE</th>
+                <th >STATUS</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="10"><input type= "button" value="ADD NEW TASK" id="newtask"></th>
+                </tr>
+            </tfoot>
+        </table>         
+    </div>       
+
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#newtask").click(function(){
+                var addcontrols="<tr>";
+                addcontrols+="<td contenteditable='true' id='c1'></td>";
+                addcontrols+="<td contenteditable='true'></td>";
+                addcontrols+="<td contenteditable='true'></td>";
+                addcontrols+="<td id='c2'><button class='delete'>DELETE</button></td>";
+                addcontrols+="</tr>";
+                $("table tbody").append(addcontrols);
+             });
+
+             $("table").on("input", function() {
+                saveTable();
+             });
+            
+             function saveTable() {
+              var tableData = [];
+              $("table tbody tr").each(function(rowIndex) {
+                var rowData = [];
+                $(this).find("td").each(function(colIndex) {
+                  if (colIndex !== 3) { // exclude the last column
+                    rowData.push($(this).text());
+                  }
+                });
+                tableData.push(rowData);
+              });
+              localStorage.setItem("tableData", JSON.stringify(tableData));
+            }
+            
+            
+            function loadTable() {
+                var tableData = JSON.parse(localStorage.getItem("tableData"));
+                if (tableData !== null) {
+                    var tableHtml = "";
+                    for (var i = 0; i < tableData.length; i++) {
+                        var rowData = tableData[i];
+                        var rowHtml = "<tr>";
+                        for (var j = 0; j < rowData.length; j++) {
+                            rowHtml += "<td contenteditable='true'>" + rowData[j] + "</td>";
+                        }
+                        rowHtml += "<td><button class='delete'>DELETE</button></td>";
+                        rowHtml += "</tr>";
+                        tableHtml += rowHtml;
+                    }
+                    $("table tbody").html(tableHtml);
+                }
+            }
+            loadTable();  
+
+            $("table tbody").on("click", ".delete", function() {
+                $(this).closest("tr").remove();
+                saveTable();
+            });
+        });
+          </script>
+
+
+  

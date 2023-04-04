@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Portals</title>
+    <link rel="stylesheet" href="style_resources_v2.css">
+    <script src="./Html Files/resources.js"></script>
+    <link rel="icon" href="./Images/logo/lb_icon.png">
+</head>
+<body>
+    <div class="banner">
+        <header>
+            <img class="logo" src="./Images/logo/Learn_Bridge3.png" alt="logo" height="100px">
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="index.html"><button>HOME</button></a></li>
+                    <li><a href="contact.html"><button>CONTACT US</button></a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="search">
+            <form id="search-from" onsubmit="return false;" target="_blank">
+                <h1>Search Your Query...</h1>
+                <div class="search_box">
+                    <input id="search-input" type="text" placeholder="Hello There!" class="input">
+                    <img src="./Images/search_btn2.png" height="50px">
+                </div>
+                <div class="apps">
+                    <h1>Where would you like to search this query in?</h1>
+                    <button onclick="searchGoogle()"><img src="./Images/Google_logo3.png"></button>
+
+                    <button onclick="searchScholar()"><img src="./Images/Google_Scholar_logo4.png"></button>
+                                
+                    <button onclick="searchYoutube()"><img src="./Images/Youtube_logo3.png"></button>
+
+                    <button onclick="searchOverflow()"><img src="./Images/logo-stackoverflow2.png"></button>
+
+                    <button onclick="searchQuora()"><img src="./Images/Quora_logo.png"></button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>demotable</title>
+    <style>
+        body{
+            background-image: url(/images/greenbg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: lightgreen;
+        }
+        table,td,th{
+            border-collapse: collapse;
+            margin: auto;
+            width: 60%;
+            border: 2px solid darkgreen ;
+            text-align: center;
+        }
+        tbody{
+            background-color:chartreuse;
+        }
+        h2{
+            text-align: center;
+            color: rgb(80, 123, 15);
+        }
+        thead{
+            background-color: rgb(92, 194, 92);
+        }
+        tfoot{
+            margin: auto;
+            width: auto;
+        }
+        .table td{
+            padding-right: 0px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#newtask").click(function(){
+                var addcontrols="<tr>";
+                addcontrols+="<td contenteditable='true'></td>";
+                addcontrols+="<td contenteditable='true'></td>";
+                addcontrols+="<td contenteditable='true'></td>";
+                addcontrols+="<td><button class='delete'>Delete</button></td>";
+                addcontrols+="</tr>";
+                $("table tbody").append(addcontrols);
+             });
+
+             $("table").on("input", function() {
+                saveTable();
+             });
+            
+             function saveTable() {
+              var tableData = [];
+              $("table tbody tr").each(function(rowIndex) {
+                var rowData = [];
+                $(this).find("td").each(function(colIndex) {
+                  if (colIndex !== 3) { // exclude the last column
+                    rowData.push($(this).text());
+                  }
+                });
+                tableData.push(rowData);
+              });
+              localStorage.setItem("tableData", JSON.stringify(tableData));
+            }
+            
+            
+            function loadTable() {
+                var tableData = JSON.parse(localStorage.getItem("tableData"));
+                if (tableData !== null) {
+                    var tableHtml = "";
+                    for (var i = 0; i < tableData.length; i++) {
+                        var rowData = tableData[i];
+                        var rowHtml = "<tr>";
+                        for (var j = 0; j < rowData.length; j++) {
+                            rowHtml += "<td contenteditable='true'>" + rowData[j] + "</td>";
+                        }
+                        rowHtml += "<td><button class='delete'>Delete</button></td>";
+                        rowHtml += "</tr>";
+                        tableHtml += rowHtml;
+                    }
+                    $("table tbody").html(tableHtml);
+                }
+            }
+            loadTable();  
+
+            $("table tbody").on("click", ".delete", function() {
+                $(this).closest("tr").remove();
+                saveTable();
+            });
+        });
+          </script>
+      </head>
+      <body>
+          <h2>Table of Tasks</h2>
+          <table>
+              <thead>
+                  <tr>
+                      <th>Task</th>
+                      <th>Due Date</th>
+                      <th>Status</th>
+                  </tr>
+              </thead>
+              <tbody class="table">
+                
+              </tbody>
+              <tfoot>
+                  <tr>
+                      <td colspan="10"><input type= "button" value="Add new Task" id="newtask"></td>
+                  </tr>
+              </tfoot>
+            </table>
+            
+            <button onclick="saveTable()" style="text-align:center;margin-left:49%; margin-top:10px">Save</button>
+      </body>
+      </html>

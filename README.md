@@ -6,5 +6,5 @@ Learn Bridge is a Google Developer Student Club (GDSC) website project that was 
 
 However, quality education is not the only necessity required by students. The well being of their health and mental state is also a crucial thing to keep in mind. So, Learn Bridge also provides the help that the students may need by providing them articles hand-picked by students themselves that they found to be helpful.
 
-** WEBSITE LINK **
-https://joshuar26.github.io/LearnBridge/contact.html
+---WEBSITE LINK---
+https://joshuar26.github.io/LearnBridge/index.html

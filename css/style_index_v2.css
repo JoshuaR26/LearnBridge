@@ -1,24 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Rajdhani&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 15px;
-    font-weight: 900;
-    color: #000;
+    font-family: 'Raleway', sans-serif;
+    /* font-size: 15px; */
+    /* font-weight: 900; */
+    /* color: #000; */
 }
 html{
     scroll-behavior: smooth;
 }
-
+body {
+    /* margin-right: 500px; */
+    background-color: #000000;
+    background-color: linear-gradient(rgb(11, 36, 71),rgb(11, 36, 71));
+}
 
 h1{
-    font-family: 'Jost',sans-serif;
-    font-weight: 600;
+    font-size: 150px;
+    font-weight: 900;
+    color: #fff;
+}
+h3 {
+    color: #fff;
+    font-size: 100px;
+    letter-spacing: 10px;
 }
 .stuff{
-    background-image: radial-gradient(rgb(255, 200, 0),rgb(255, 170, 0)) ;
+    /* background-image: radial-gradient(rgb(255, 200, 0),rgb(255, 170, 0)) ; */
 }
 /* ! BACKGROUND */
 .banner{
@@ -28,49 +37,6 @@ h1{
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat ;
-    background-image: radial-gradient(rgba(255, 200, 0, 0.6),rgba(255, 136, 0, 0.7)),url('./Images/home_bg3.jpg');
-}
-
-/* ! NAVIGATION BAR */
-header{
-    position:sticky;
-    top:0px;
-    z-index: 999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #293452;
-    box-shadow: 1px 1px 30px #00000062;
-}
-.logo img{
-    cursor:pointer;
-}
-.nav_links{
-    list-style: none;
-    display: inline-block;
-}
-.nav_links li{
-    display: inline-block;
-    padding: 0 60px;
-}
-.nav_links li a{
-    color: #fff;
-    text-decoration: none;
-}
-.nav_links button{
-    color: #1b1c17;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 20px;
-    background-color: #ffffff;
-    /* box-shadow: 1px 1px 15px #38393682; */
-    transition: 0.5s;
-}
-.nav_links button:hover{
-    background-color: #ffd025;
-}
-.nav_links button:active{
-    opacity:0.6;
 }
 
 /* ! TITLE CARD */
@@ -125,7 +91,7 @@ header{
 }
 .about{
     
-    background-image: linear-gradient(to right,rgba(21, 40, 46,1),rgba(21, 40, 46,.8),rgba(0,0,0,.1)),url('./Images/index_img1.jpg');
+    background-image: linear-gradient(to right,rgba(21, 40, 46,1),rgba(21, 40, 46,.8),rgba(0,0,0,.1));
     background-position-x: right;
     background-size: cover;
     height: 80%;
